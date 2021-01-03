@@ -77,15 +77,15 @@ def time_stats(df):
 
     # TO DO: display the most common month
     topMonth = df['Start Time'].dt.month.value_counts().idxmax()
-    print('Most common month:\t\t\t' + calendar.month_name[topMonth])
+    print('Most common month:\t\t\t{}'.format(calendar.month_name[topMonth]))
 
     # TO DO: display the most common day of week
     topDay = df['Start Time'].dt.weekday.value_counts().idxmax()
-    print('Most common day of week:\t' + calendar.day_name[topDay])
+    print('Most common day of week:\t{}'.format(calendar.day_name[topDay]))
 
     # TO DO: display the most common start hour
     topHour = df['Start Time'].dt.hour.value_counts().idxmax()
-    print('Most common start hour:\t\t' + str(topHour))
+    print('Most common start hour:\t\t{}'.format(topHour))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
@@ -114,15 +114,15 @@ def station_stats(df):
 
     # TO DO: display most commonly used start station
     top_s_station = df['Start Station'].value_counts().idxmax()
-    print('Most common start station: '+ top_s_station)
+    print('Most common start station: {}'.format(top_s_station))
 
     # TO DO: display most commonly used end station
     top_e_station = df['End Station'].value_counts().idxmax()
-    print('Most common end station:   '+ top_e_station)
+    print('Most common end station:   {}'.format(top_e_station))
 
     # TO DO: display most frequent combination of start station and end station trip
     top_route = df.groupby(['Start Station','End Station']).size().idxmax()
-    print('Most frequent combination of start and end station: ' + str(top_route))
+    print('Most frequent combination of start and end station: {}'.format((top_route)))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -134,10 +134,10 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # TO DO: display total travel time
-    print('Total travel time: '+str(df['Trip Duration'].sum()))
+    print('Total travel time: {}'.format((df['Trip Duration'].sum())))
 
     # TO DO: display mean travel time
-    print('Mean travel time:  '+str(df['Trip Duration'].mean()))
+    print('Mean travel time:  {}'.format((df['Trip Duration'].mean())))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -162,9 +162,9 @@ def user_stats(df,city):
     # TO DO: Display earliest, most recent, and most common year of birth
     if city.lower() != "washington":
         print("\nAge statistic:")
-        print('Earliest year of birth: '+str(int(df['Birth Year'].min())))
-        print('Most recent year of birth: '+str(int(df['Birth Year'].max())))
-        print('Most common year of birth: '+str(int(df['Birth Year'].value_counts().idxmax())))
+        print('Earliest year of birth: {}'.format(df['Birth Year'].min()))
+        print('Most recent  year of birth: {}'.format(df['Birth Year'].max()))
+        print('Most common year of birth: {}'.format(df['Birth Year'].value_counts().idxmax()))
     else:
         print('\nAge statistics not available for city of Washington')
 
