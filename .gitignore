@@ -1,0 +1,6 @@
+#ignore all .csv source data files
+
+*.csv
+
+#ignore personal notes
+notes.txt
