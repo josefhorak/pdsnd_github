@@ -153,6 +153,7 @@ def user_stats(df,city):
     print(df.groupby(['User Type']).size())
 
     # TO DO: Display counts of gender
+    # condition for washington file to deal with the missing data
     if city.lower() != "washington":
         print("\nGender statistic:")
         print(df.groupby(['Gender']).size())
@@ -160,6 +161,7 @@ def user_stats(df,city):
         print('\nGender statistics not available for city of Washington')
 
     # TO DO: Display earliest, most recent, and most common year of birth
+    # condition for washington file to deal with the missing data
     if city.lower() != "washington":
         print("\nAge statistic:")
         print('Earliest year of birth: '+str(int(df['Birth Year'].min())))
