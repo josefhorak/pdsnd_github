@@ -30,4 +30,5 @@ The Chicago and New York City files also have the following two columns:
 
 
 ### Credits
-Udacity Programming for Data Science team
+- Udacity Programming for Data Science team
+- oficial git refrende guide: [Link](https://git-scm.com/docs)
